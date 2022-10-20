@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.029" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/editTextDays"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -63,10 +63,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextHours"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCalc"
         android:layout_width="374dp"
         android:layout_height="61dp"
         android:layout_marginStart="16dp"
@@ -81,6 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDays"
         app:layout_constraintVertical_bias="0.135" />
 </androidx.constraintlayout.widget.ConstraintLayout>
