@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    EditText watts,hours,days;
+    EditText watts, hours, days;
     Button buttonCalc;
 
     @Override
@@ -17,24 +17,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        watts = (EditText) findViewById(R.id.editTextWatts);
-        hours = (EditText) findViewById(R.id.editTextHours);
-        days = (EditText) findViewById(R.id.editTextDays);
-        buttonCalc =(Button) findViewById(R.id.buttonCalc);
+        watts =  findViewById(R.id.editTextWatts);
+        hours =  findViewById(R.id.editTextHours);
+        days =  findViewById(R.id.editTextDays);
+        buttonCalc = findViewById(R.id.buttonCalc);
 
-        buttonCalc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showResult();
-            }
-        });
+        buttonCalc.setOnClickListener(view -> showResult());
     }
 
-    public void showResult(){
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("watts",watts.getText().toString());
-        intent.putExtra("hours",hours.getText().toString());
-        intent.putExtra("days",days.getText().toString());
+    public void showResult() {
+        if(TextUtils.isEmpty(watts.getText().toString())){
+            watts.setError("Campo obrigatório!");
+            return;
+        }
+        if(TextUtils.isEmpty(hours.getText().toString())){
+            hours.setError("Campo obrigatório!");
+            return;
+        }
+        if(TextUtils.isEmpty(days.getText().toString())){
+            days.setError("Campo obrigatório!");
+            return;
+        }
+
+            Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("watts", watts.getText().toString());
+        intent.putExtra("hours", hours.getText().toString());
+        intent.putExtra("days", days.getText().toString());
         startActivity(intent);
 
 
