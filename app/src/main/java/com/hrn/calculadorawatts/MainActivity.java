@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             hours.setError("Campo obrigatório!");
             return;
         }
+
+
         if(TextUtils.isEmpty(days.getText().toString())){
             days.setError("Campo obrigatório!");
             return;

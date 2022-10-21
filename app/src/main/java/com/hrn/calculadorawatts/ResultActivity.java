@@ -30,10 +30,10 @@ public class ResultActivity extends AppCompatActivity {
         reals = 1.04 * calc;
 
 
-        strResult = "Esse equipamento irá consumir " + calc + " Kwh" + "\n" +
+        strResult = "Esse equipamento de "+watts+"W irá consumir " + calc + " Kwh" + "\n" +
                 "Sendo utilizado por " + Integer.parseInt(intent.getStringExtra("hours")) + " horas" + "\n" +
                 "e durante " + Integer.parseInt(intent.getStringExtra("days")) + " dias" + "\n" +
-                "Totalizando R$" + new DecimalFormat("0.00").format(reals);
+                "Custará R$ " + new DecimalFormat("0.00").format(reals);
 
         result.setText(strResult);
 
